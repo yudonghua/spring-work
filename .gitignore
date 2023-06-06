@@ -1,0 +1,12 @@
+.idea/
+**/*.iml
+**/pkg/*
+**/target/*
+**/.DS_Store
+**/*.project
+**/*.settings/
+**/*.classpath
+**/*.gitignore
+**/catalina.base_IS_UNDEFINED/logs/*
+**/src/main/webapp/WEB-INF/classes/*
+.metadata/**
