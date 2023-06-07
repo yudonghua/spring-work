@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.demo.dao.UserDao" >
-  <resultMap id="BaseResultMap" type="com.demo.model.UserDomain">
-    <id column="user_id" property="userId" />
-    <result column="user_name" property="userName" />
-    <result column="password" property="password" />
-    <result column="phone" property="phone" />
-  </resultMap>
-
   <sql id="BASE_TABLE">
     t_user
   </sql>
 
   <sql id="BASE_COLUMN">
-    user_id,user_name,password,phone
+    userId,userName,password,phone
   </sql>
 
   <insert id="insert" parameterType="com.demo.model.UserDomain">
     INSERT INTO
-    <include refid="BASE_TABLE"/>
+      <include refid="BASE_TABLE"/>
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      user_name,password,
+      userName,password,
       <if test="phone != null">
         phone,
       </if>

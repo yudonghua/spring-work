@@ -8,12 +8,13 @@ import com.demo.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     private UserDao userDao;//这里会报错，但是并不会影响
 
     @Override
@@ -32,11 +33,7 @@ public class UserServiceImpl implements UserService {
     public PageInfo<UserDomain> findAllUser(int pageNum, int pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。
         PageHelper.startPage(pageNum, pageSize);
-
-
         List<UserDomain> userDomains = userDao.selectUsers();
-
-
         PageInfo result = new PageInfo(userDomains);
         return result;
     }
