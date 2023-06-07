@@ -1,9 +1,9 @@
 package com.demo.controller;
 
 
-import com.demo.dao.TeacherCourceDao;
-import com.demo.model.TeacherCource;
-import com.demo.service.user.TeacherCourceService;
+import com.demo.dao.TeacherCourseDao;
+import com.demo.model.TeacherCourse;
+import com.demo.service.user.TeacherCourseService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,20 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+
 @RestController
-@RequestMapping("/teachercource")
-public class TeacherCourceController {
+@RequestMapping("/teachercourse")
+public class TeacherCourseController {
 
     @Resource
-    private TeacherCourceService teachercourceService;
+    private TeacherCourseService teachercourseService;
 
     @Resource
-    private TeacherCourceDao teachercourceDao;
+    private TeacherCourseDao teachercourseDao;
 
     @GetMapping("/add")
-    public String showAddCourceForm(Model model) {
-        model.addAttribute("teachercource", new TeacherCource());
-        return "add-teachercource";
+    public String showAddCourseForm(Model model) {
+        model.addAttribute("teachercourse", new TeacherCourse());
+        return "add-teachercourse";
     }
 //
 //    @PostMapping("/add")
@@ -34,14 +35,14 @@ public class TeacherCourceController {
 //    }
 
     @GetMapping("/all")
-    public Object showAllTeacherCource(Model model) {
-        return teachercourceService.findAll();
+    public Object showAllTeacherCourse(Model model) {
+        return teachercourseService.findAll();
     }
 
 
     @GetMapping("/all/dao")
-    public Object showTeacherCourceFromDao(Model model) {
-        return teachercourceDao.findAll();
+    public Object showTeacherCourseFromDao(Model model) {
+        return teachercourseDao.findAll();
     }
 
     // Add other methods for updating, deleting, and retrieving students

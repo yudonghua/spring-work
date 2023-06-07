@@ -1,6 +1,6 @@
 package com.demo.model;
 
-public class Cource {
+public class Course {
     private Long id;
     private String name;
     private int credit;
@@ -11,7 +11,7 @@ public class Cource {
     private String type;
     private String profession;
     // 构造方法
-    public Cource() {
+    public Course() {
     }
 
     public Long getId() {

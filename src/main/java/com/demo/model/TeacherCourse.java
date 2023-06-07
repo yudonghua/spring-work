@@ -1,7 +1,7 @@
 package com.demo.model;
 import java.util.Date;
 
-public class TeacherCource {
+public class TeacherCourse {
     private Long id;
     private Long teacherId;
     private String username;
@@ -9,7 +9,7 @@ public class TeacherCource {
     private String profession;
     private String grade;
     private int term;
-    private Long courceId;
+    private Long courseId;
     private Date createTime;
 
     public Long getId() {
@@ -68,12 +68,12 @@ public class TeacherCource {
         this.term = term;
     }
 
-    public Long getCourceId() {
-        return courceId;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourceId(Long courceId) {
-        this.courceId = courceId;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
     public Date getCreateTime() {

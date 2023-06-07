@@ -1,6 +1,6 @@
 package com.demo.model;
 
-public class StudentCource {
+public class StudentCourse {
     private Long id;
     private Long studentId;
     private Long courseId;

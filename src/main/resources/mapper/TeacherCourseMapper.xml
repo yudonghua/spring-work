@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.demo.mapper.TeacherCourceMapper">
+<mapper namespace="com.demo.dao.TeacherCourseDao">
 
-    <resultMap id="TeacherCourceResultMap" type="com.demo.model.TeacherCource">
+    <resultMap id="TeacherCourseResultMap" type="com.demo.model.TeacherCourse">
         <id property="id" column="id"/>
         <result property="teacherId" column="teacher_id"/>
         <result property="username" column="username"/>
@@ -13,41 +13,41 @@
         <result property="profession" column="profession"/>
         <result property="grade" column="grade"/>
         <result property="term" column="term"/>
-        <result property="courceId" column="cource_id"/>
+        <result property="courseId" column="course_id"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, teacher_id, username, name, profession, grade, term, cource_id
+        id, teacher_id, username, name, profession, grade, term, course_id
     </sql>
 
-    <select id="getTeacherCourceById" resultMap="TeacherCourceResultMap">
+    <select id="getTeacherCourseById" resultMap="TeacherCourseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
-        FROM jhk_teacher_cource
+        FROM jhk_teacher_course
         WHERE id = #{id}
     </select>
 
-    <insert id="insertTeacherCource" parameterType="com.demo.model.TeacherCource">
-        INSERT INTO jhk_teacher_cource
-            (teacher_id, username, name, profession, grade, term, cource_id)
+    <insert id="insertTeacherCourse" parameterType="com.demo.model.TeacherCourse">
+        INSERT INTO jhk_teacher_course
+            (teacher_id, username, name, profession, grade, term, course_id)
         VALUES
-            (#{teacherId}, #{username}, #{name}, #{profession}, #{grade}, #{term}, #{courceId})
+            (#{teacherId}, #{username}, #{name}, #{profession}, #{grade}, #{term}, #{courseId})
     </insert>
 
-    <update id="updateTeacherCource" parameterType="com.demo.model.TeacherCource">
-        UPDATE jhk_teacher_cource
+    <update id="updateTeacherCourse" parameterType="com.demo.model.TeacherCourse">
+        UPDATE jhk_teacher_course
         SET teacher_id = #{teacherId},
             username = #{username},
             name = #{name},
             profession = #{profession},
             grade = #{grade},
             term = #{term},
-            cource_id = #{courceId}
+            course_id = #{courseId}
         WHERE id = #{id}
     </update>
 
-    <delete id="deleteTeacherCource" parameterType="Long">
-        DELETE FROM jhk_teacher_cource
+    <delete id="deleteTeacherCourse" parameterType="Long">
+        DELETE FROM jhk_teacher_course
         WHERE id = #{id}
     </delete>
 

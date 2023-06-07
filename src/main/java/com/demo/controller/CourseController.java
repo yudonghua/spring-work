@@ -1,9 +1,9 @@
 package com.demo.controller;
 
 
-import com.demo.dao.CourceDao;
-import com.demo.model.Cource;
-import com.demo.service.user.CourceService;
+import com.demo.dao.CourseDao;
+import com.demo.model.Course;
+import com.demo.service.user.CourseService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,20 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+
 @RestController
-@RequestMapping("/cource")
-public class CourceController {
+@RequestMapping("/course")
+public class CourseController {
 
     @Resource
-    private CourceService courceService;
+    private CourseService courseService;
 
     @Resource
-    private CourceDao courceDao;
+    private CourseDao courseDao;
 
     @GetMapping("/add")
-    public String showAddCourceForm(Model model) {
-        model.addAttribute("cource", new Cource());
-        return "add-cource";
+    public String showAddCourseForm(Model model) {
+        model.addAttribute("course", new Course());
+        return "add-course";
     }
 //
 //    @PostMapping("/add")
@@ -34,14 +35,14 @@ public class CourceController {
 //    }
 
     @GetMapping("/all")
-    public Object showAllCource(Model model) {
-        return courceService.findAll();
+    public Object showAllCourse(Model model) {
+        return courseService.findAll();
     }
 
 
     @GetMapping("/all/dao")
-    public Object showCourceFromDao(Model model) {
-        return courceDao.findAll();
+    public Object showCourseFromDao(Model model) {
+        return courseDao.findAll();
     }
 
     // Add other methods for updating, deleting, and retrieving students
